@@ -1,4 +1,5 @@
 import app from 'apprun';
+import('../pkg').catch(e => console.log(e));
 
 const model = 'Hello world - AppRun !';
 
@@ -11,5 +12,3 @@ const update = {
 };
 
 app.start(document.body, model, view, update);
-
-import('../pkg').catch(e => console.log(e))
