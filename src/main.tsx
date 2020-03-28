@@ -12,4 +12,4 @@ const update = {
 
 app.start(document.body, model, view, update);
 
-import(/* webpackChunkName: 'pkg' */'../pkg').catch(e => console.log(e))
+import('../pkg').catch(e => console.log(e))

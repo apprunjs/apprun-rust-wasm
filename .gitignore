@@ -7,4 +7,5 @@ coverage
 pkg
 target
 *.lock
-dist
+dist/*.js*
+dist/*.wasm
