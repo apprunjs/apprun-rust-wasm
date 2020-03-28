@@ -1,11 +1,12 @@
 const path = require('path');
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 module.exports = {
   entry: {
-    'dist/app': './src/main.tsx',
+    'app': './src/main.tsx',
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname)
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
@@ -19,5 +20,10 @@ module.exports = {
   devServer: {
     open: true
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  plugins: [
+    new WasmPackPlugin({
+      crateDirectory: path.resolve(__dirname, ".")
+    }),
+  ]
 }
